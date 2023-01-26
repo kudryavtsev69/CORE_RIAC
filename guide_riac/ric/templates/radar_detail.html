@@ -1,0 +1,12 @@
+{% extends 'index.html' %}
+{% block title %}{{ rls.title }}{% endblock %}
+{% block content %}
+        <div class="card">
+          <img src="{{ rls.image.url }}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">{{ rls.title }}</h5>
+            <p class="card-text">{{ rls.body  }}</p>
+          </div>
+          <a href="{%url 'ric:list_radar'%}" class="btn btn-primary">Назад</a>
+        </div>
+{% endblock %}

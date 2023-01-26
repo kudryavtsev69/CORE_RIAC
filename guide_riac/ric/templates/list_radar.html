@@ -1,0 +1,17 @@
+{% extends 'index.html' %}
+{% block title %}Список РЛС{% endblock %}
+{% block content %}
+
+    {% for rls in all_radar %}
+        <div class="card" style="width: 18rem;">
+          <img src="{{ rls.image.url }}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">{{ rls.title }}</h5>
+            <p class="card-text">{{ rls.body | truncatechars:'30' }}</p>
+            <a href="{{rls.get_absolute_url}}" class="btn btn-primary">{{ rls.title }}</a>
+          </div>
+        </div>
+    {% endfor %}
+
+{% endblock %}
+
