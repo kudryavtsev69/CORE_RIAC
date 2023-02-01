@@ -16,11 +16,21 @@
     <nav id="navbar">
       <div id="container-navbar">
         <a class= "navbar-main" href="{% url 'ric:index' %}">Разведывательно-информационно аналитический центр</a>
-        <a href="{% url 'ric:list_radar'%}">РИЦ</a>
+        <a href="{% url 'ric:list_radar' %}">РИЦ</a>
         <a href="#">ЦОР</a>
         <a href="#">РЭБ</a>
       </div>
     </nav>
+    {% if messages %}
+         <ul class="messages">
+         {% for message in messages %}
+         <li class="{{ message.tags }}">
+         {{ message|safe }}
+         <a href="#" class="close">x</a>
+         </li>
+         {% endfor %}
+         </ul>
+    {% endif %}
     <div class="card">
       {% block content %}{% endblock %}
     </div>

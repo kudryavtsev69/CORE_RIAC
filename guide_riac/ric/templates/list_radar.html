@@ -2,7 +2,7 @@
 {% block title %}Список РЛС{% endblock %}
 {% block content %}
 <div id="add_rls">
-    <a  href="#" class="btn add_rls">Добавить РЛС</a>
+    <a  href="{% url 'ric:add_rls' %}" class="btn add_rls">Добавить РЛС</a>
 </div>
 
     {% for rls in all_radar %}

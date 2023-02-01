@@ -9,5 +9,6 @@ class AddRadar(forms.ModelForm):
 
         widgets = {
             'title': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Название РЛС'}),
-            'body': forms.Textarea(attrs={'class': 'form-control', 'placeholder': 'Описание РЛС'})
+            'body': forms.Textarea(attrs={'class': 'form-control', 'placeholder': 'Описание РЛС'}),
+            'image': forms.ClearableFileInput(attrs={'placeholder': 'Изображение'}),
         }

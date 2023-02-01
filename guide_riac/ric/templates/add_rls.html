@@ -1,0 +1,19 @@
+{% extends 'index.html' %}
+{% block title %}Добавление РЛС{% endblock %}
+{% block content %}
+<div id="add_rls">
+      <a href="{% url 'ric:add_rls' %}" class="btn add_rls">Добавить РЛС</a>
+</div>
+
+<div id="add_new_rls">
+  <h1>Добавление РЛС</h1>
+   <p>Заполните форму ниже:</p>
+  <form method="post">
+    {{ add_form.title }}<br>
+    {{ add_form.body }}<br>
+    {{ add_form.image }}<br>
+    {% csrf_token %}
+    <p><input type="submit" value="Добавить РЛС"></p>
+  </form>
+</div>
+{% endblock %}
