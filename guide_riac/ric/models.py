@@ -9,7 +9,7 @@ class Radar(models.Model):
     slug = models.SlugField('URL', null=False, unique=True) #Слаг
     body = models.TextField('Описание РЛС', null=True) # Описание РЛС
     data = models.DateTimeField('Дата', auto_now=True) # Дата создание записи
-    image = models.ImageField(upload_to='images/')
+    image = models.ImageField(upload_to='images/', blank=True)
 
     def __str__(self):
         return self.title

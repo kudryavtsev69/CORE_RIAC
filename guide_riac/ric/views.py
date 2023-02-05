@@ -1,3 +1,4 @@
+from django.http import HttpResponse
 from django.shortcuts import render, get_object_or_404
 from django.contrib import messages
 from .models import Radar
@@ -20,12 +21,13 @@ def radar_detail(request, radar):
 
 def add_rls(request):
     if request.method == 'POST':
-        add_form = AddRadar(request.POST)
+        add_form = AddRadar(request.POST, files=request.FILES)
         if add_form.is_valid():
             add_form.save()
             messages.success(request, 'РЛС добавлена!')
         else:
             messages.error(request, 'РЛС не добавлена!')
+            return HttpResponse(add_form.errors)
     else:
         add_form = AddRadar()
     return render(request, 'add_rls.html', {'add_form': add_form})
