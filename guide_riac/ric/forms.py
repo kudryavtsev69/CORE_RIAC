@@ -11,3 +11,14 @@ class AddRadar(forms.ModelForm):
             'title': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Название РЛС'}),
             'body': forms.Textarea(attrs={'class': 'form-control', 'placeholder': 'Описание РЛС'}),
         }
+
+
+class EditRadar(forms.ModelForm):
+    class Meta:
+        model = Radar
+        fields = ('title', 'body', 'image',)
+
+        widgets = {
+            'title': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Название РЛС'}),
+            'body': forms.Textarea(attrs={'class': 'form-control', 'placeholder': 'Описание РЛС'}),
+        }

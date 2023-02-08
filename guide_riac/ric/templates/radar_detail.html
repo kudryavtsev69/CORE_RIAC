@@ -7,6 +7,7 @@
             <h5 class="card-title">{{ rls.title }}</h5>
             <p class="card-text">{{ rls.body  }}</p>
           </div>
+            <a href="{%url 'ric:edit_rls' rls.pk %}" class="btn btn-primary">Изменить</a>
           <a href="{%url 'ric:list_radar'%}" class="btn btn-primary">Назад</a>
         </div>
 {% endblock %}
