@@ -1,19 +1,21 @@
 {% extends 'index.html' %}
 {% block title %}Добавление РЛС{% endblock %}
 {% block content %}
-<div id="add_rls">
-      <a href="{% url 'ric:add_rls' %}" class="btn add_rls">Добавить РЛС</a>
+<div>
+    <a href="{% url 'ric:add_rls' %}" class="btn btn-outline-success"
+       style="position:fixed; right:50px; bottom:50px;">Добавить РЛС</a>
 </div>
 
 <div id="add_new_rls">
-  <h1>Добавление РЛС</h1>
-   <p>Заполните форму ниже:</p>
+  <h1 style="text-align:center;">Добавление РЛС</h1>
+   <p style="margin-top:10px;">Заполните форму ниже:</p>
   <form action="." method="post" enctype="multipart/form-data">
     {{ add_form.title }}<br>
     {{ add_form.body }}<br>
     {{ add_form.image }}<br>
     {% csrf_token %}
-    <p><input type="submit" value="Добавить РЛС"></p>
+    <p style="margin-top:20px;"><input type="submit" value="Добавить РЛС"></p>
+    <p style="margin-top:20px;"><a href="{%url 'ric:list_radar'%}" class="btn btn-primary">Назад</a></p>
   </form>
 </div>
 {% endblock %}

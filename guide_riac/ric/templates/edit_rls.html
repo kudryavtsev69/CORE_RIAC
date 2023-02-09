@@ -13,7 +13,7 @@
     {{ edit_form.body }}<br>
     {{ edit_form.image }}<br>
     {% csrf_token %}
-    <p style="margin-top: 10px;"><input type="submit" value="Изменить РЛС"></p>
+    <p style="margin-top: 10px;" ><input type="submit" value="Изменить РЛС" class="btn btn-secondary"></p>
       <a href="{%url 'ric:list_radar'%}" class="btn btn-primary">Назад</a>
 
   </form>

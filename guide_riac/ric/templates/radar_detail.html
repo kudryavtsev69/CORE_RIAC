@@ -14,6 +14,8 @@
         <p class="card-text"><small class="text-muted">{{ rls.data  }}</small></p>
           <a href="{%url 'ric:edit_rls' rls.pk %}" class="btn btn-primary">Изменить</a>
           <a href="{%url 'ric:list_radar'%}" class="btn btn-primary">Назад</a>
+          <a href="{%url 'ric:del_rls' rls.pk %}" class="btn btn-danger"
+             style="margin-left:400px;">Удалить {{ rls.title }}</a>
       </div>
     </div>
   </div>

@@ -2,7 +2,7 @@ from django.http import HttpResponse
 from django.shortcuts import render, get_object_or_404
 from django.contrib import messages
 from .models import Radar
-from .forms import AddRadar, EditRadar
+from .forms import AddRadar, EditRadar, DelRadar
 
 
 def index(request):
@@ -45,3 +45,10 @@ def edit_rls(request, pk):
     else:
         edit_form = EditRadar(instance=get_rls)
     return render(request, 'edit_rls.html', {'edit_form': edit_form})
+
+
+def del_rls(request, pk):
+    get_rls = Radar.objects.get(pk=pk)
+    get_rls.delete()
+    messages.success(request, 'РЛС удалена.')
+    return render(request, 'del_rls.html', {})
