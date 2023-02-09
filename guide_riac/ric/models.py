@@ -16,8 +16,7 @@ class Radar(models.Model):
 
     def save(self, *args, **kwargs):
         '''Функция перевода названия РЛС (русских букв) в слаг (на английском)'''
-        if not self.slug:
-            self.slug = slugify(self.title)
+        self.slug = slugify(self.title)
         super(Radar, self).save(*args, **kwargs)
 
     def get_absolute_url(self):

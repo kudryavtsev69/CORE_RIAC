@@ -1,20 +1,27 @@
 {% extends 'index.html' %}
 {% block title %}Список РЛС{% endblock %}
 {% block content %}
-<div id="add_rls">
-    <a  href="{% url 'ric:add_rls' %}" class="btn add_rls">Добавить РЛС</a>
+
+<div>
+    <a href="{% url 'ric:add_rls' %}" class="btn btn-outline-success"
+       style="position:fixed; right:50px; bottom:50px;">Добавить РЛС</a>
 </div>
 
+
+<div class="row row-cols-2 row-cols-md-3 g-4" style="margin-top: 10px;">
     {% for rls in all_radar %}
-        <div class="card" style="width: 18rem;">
-          <img src="{{ rls.image.url }}" class="card-img-top" alt="{{ rls.title }}" width="320" height="240">
-          <div class="card-body">
-            <h5 class="card-title">{{ rls.title }}</h5>
-            <p class="card-text">{{ rls.body | truncatechars:'30' }}</p>
-            <a href="{{rls.get_absolute_url}}" class="btn btn-primary">{{ rls.title }}</a>
-          </div>
-        </div>
+  <div class="col">
+    <div class="card h-100">
+      <img src="{{ rls.image.url }}" class="card-img-top" alt="{{ rls.title }}" width="320" height="240">
+      <div class="card-body">
+        <h5 class="card-title">{{ rls.title }}</h5>
+        <p class="card-text">{{ rls.body | truncatechars:'30' }}</p>
+          <a href="{{rls.get_absolute_url}}" class="btn btn-primary" style="width: 150px; margin:0 auto;">{{ rls.title }}</a>
+      </div>
+    </div>
+  </div>
     {% endfor %}
+</div>
 
 {% endblock %}
 

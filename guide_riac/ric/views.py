@@ -39,7 +39,7 @@ def edit_rls(request, pk):
         edit_form = EditRadar(request.POST, instance=get_rls, files=request.FILES)
         if edit_form.is_valid():
             edit_form.save()
-            messages.success(request, 'РЛС добавлена.')
+            messages.success(request, 'РЛС изменена.')
         else:
             messages.error(request, 'Ошибка')
     else:
