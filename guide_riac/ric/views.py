@@ -6,7 +6,7 @@ from .forms import AddRadar, EditRadar, DelRadar
 
 
 def index(request):
-    return render(request, 'index.html', {})
+    return render(request, 'base.html', {})
 
 
 def list_radar(request):
@@ -44,7 +44,8 @@ def edit_rls(request, pk):
             messages.error(request, 'Ошибка')
     else:
         edit_form = EditRadar(instance=get_rls)
-    return render(request, 'edit_rls.html', {'edit_form': edit_form})
+    return render(request, 'edit_rls.html', {'edit_form': edit_form,
+                                             'rls': get_rls})
 
 
 def del_rls(request, pk):

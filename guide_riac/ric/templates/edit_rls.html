@@ -1,12 +1,9 @@
 {% extends 'index.html' %}
 {% block title %}Изменение РЛС{% endblock %}
 {% block content %}
-<div id="add_rls">
-      <a href="{% url 'ric:add_rls' %}" class="btn add_rls">Добавить РЛС</a>
-</div>
 
 <div id="add_new_rls">
-  <h1>Изменить РЛС</h1>
+  <h1>Изменить {{ rls.title }}</h1>
    <p>Заполните форму ниже:</p>
   <form action="." method="post" enctype="multipart/form-data">
     {{ edit_form.title }}<br>
